@@ -25,10 +25,19 @@ public class PrintProductsServlet extends HttpServlet {
 
         PrintWriter printWriter = response.getWriter();
         printWriter.write("<h1>Products table:</h1>");
-        printWriter.write("<table border bgcolor=\"#FFE4B5\" width=\"150\" height=\"50\"><tr><td align=\"center\" valign=\"middle\" width=\"75\" height=\"50\">Name</td><td align=\"center\" valign=\"middle\"  width=\"75\" height=\"50\">Price</td></tr></table>");
-
+        printWriter.write("<table border width='150' height='50'>" +
+                "<tr>" +
+                "<td align='center' valign='middle'>Name</td>" +
+                "<td align='center' valign='middle'>Price</td>" +
+                "</tr>" +
+                "</table>");
         for (Product product : productArrayList)
-            printWriter.write("<table border bgcolor=\"#FFF8DC\" width=\"150\" height=\"50\"><tr><td align=\"center\" valign=\"middle\" width=\"75\" height=\"50\">" + product.getName() +"</td><td align=\"center\" valign=\"middle\" width=\"75\" height=\"50\">"+ product.getPrice() + "</td></tr></table>");
+            printWriter.write("<table border width='150' height='50'>" +
+                    "<tr>" +
+                    "<td align='center' valign='middle' width='90' height='50'>" + product.getName() +"</td>" +
+                    "<td align='center' valign='middle' width='90' height='50'>"+ product.getPrice() + "</td>" +
+                    "</tr>" +
+                    "</table>");
 
     }
 }
